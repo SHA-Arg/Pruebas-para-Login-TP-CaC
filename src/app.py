@@ -1,7 +1,17 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
+from flask_mysqldb import MySQL
 from config import config
 
+# Models:
+from models.ModelUser import ModelUser
+
+# Entities:
+from models.entities.User import User
+
+
 app = Flask(__name__)
+
+db = MySQL(app)
 
 
 @app.route('/')
@@ -12,48 +22,28 @@ def index():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        print(request.form['usuario'])
-        print(request.form['password'])
-        return render_template('auth/login.html')
+        # print(request.form['usuario'])
+        # print(request.form['password'])
+        user = User(0, request.form['usuario'], request.form['password'])
+        logged_user = ModelUser.login(db, user)
+        if logged_user != None:
+            if logged_user.password:
+                return redirect(url_for('home'))
+            else:
+                flash('Invalid Password!!')
+                return render_template('auth/login.html')
+        else:
+            flash('Usuario o contraseña incorrectos')
+            return render_template('auth/login.html')
     else:
         return render_template('auth/login.html')
+
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
 
 
 if __name__ == '__main__':
     app.config.from_object(config['development'])
     app.run()
-
-
-# PRIMER INTENTO DE CONEXION A BASE DE DATOS
-
-# app.config['MYSQL_HOST'] = 'localhost'
-# app.config['MYSQL_HOST'] = 'localhost'
-# app.config['MYSQL_HOST'] = 'localhost'
-# app.config['MYSQL_HOST'] = 'localhost'
-# app.config['MYSQL_HOST'] = 'localhost'
-
-# mysql = MySQL()
-
-
-# @app.route('/', methods=['GET'])
-# def login():
-#     return render_template('login.html')
-
-
-# @app.route('/add_user')
-# def add_user():
-#     return 'Add user page'
-
-
-# @app.route('/edit_user')
-# def edit_user():
-#     return 'Edit user page'
-
-
-# @app.route('/delete_user')
-# def delete_user():
-#     return 'Delete user page'
-
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
