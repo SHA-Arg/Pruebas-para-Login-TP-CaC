@@ -7,8 +7,8 @@ class ModelUser():
     def login(self, db, user):
         try:
             cursor = db.connection.cursor()
-            sql = """SELECT id, username, password, fullname FROM users 
-                        WHERE username = '{}'""".format(user.username)
+            sql = "SELECT id, username, password, fullname FROM users WHERE username = '{}'".format(
+                user.username)
             cursor.execute(sql)
             row = cursor.fetchone()
             if row != None:
