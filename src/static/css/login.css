@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto&display=swap");
+
+/* ESTILOS GLOBALES */
+* {
+	font-family: "Roboto", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 100vh;
+	background: url(../img/matchea.jpg) no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.img {
+	top: -90px;
+	left: 50%;
+	backdrop-filter: blur(80px);
+	transform: translateX(-50%);
+	border-radius: solid #776ecb 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	-webkit-border-radius: solid #776ecb 5px;
+	-moz-border-radius: solid #776ecb 5px;
+	-ms-border-radius: solid #776ecb 5px;
+	-o-border-radius: solid #776ecb 5px;
+}
+.login_logo {
+	background-color: #776ecb;
+	border-radius: 50%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contenedor h2 {
+	color: #fff;
+	font-size: 2rem;
+	text-align: center;
+}
+
+.input-contenedor {
+	position: relative;
+	margin: 30px 0;
+	width: 300px;
+	border-bottom: 2px solid #fff;
+}
+
+.input-contenedor label {
+	position: absolute;
+	left: 5px;
+	top: 50%;
+	color: #fff;
+	font-size: 1rem;
+	transform: translateY(-50%);
+	transition: 0.6s;
+	pointer-events: none;
+	font-weight: bold;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+	top: -5px;
+}
+
+.input-contenedor input {
+	width: 100%;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	color: #fff;
+	font-size: 1.2rem;
+	padding: -35 0 5px;
+	height: 50px;
+}
+
+.input-contenedor span {
+	position: absolute;
+	right: 8px;
+	top: 20px;
+	color: #fff;
+	font-size: 1.2rem;
+}
+
+.recuperar {
+	margin: -15px 0 15px;
+	font-size: 0.9em;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+}
+
+.recuperar label input {
+	margin: 3px;
+}
+
+.recuperar label a {
+	color: #fff;
+	text-decoration: none;
+	transition: 0.3s;
+	font-size: 0.9em;
+	margin-left: 3px;
+}
+
+.recuperar label a:hover {
+	text-decoration: underline;
+}
+
+.ingresar {
+	width: 100%;
+	height: 50px;
+	background-color: #58247667;
+	border-radius: 40px;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	outline: none;
+	font-size: 1rem;
+}
+.ingresar:hover {
+	background: #776ecb;
+	opacity: 0.9;
+}
+
+.crear_cuenta {
+	margin: 20px 0 10px;
+	text-align: center;
+	color: #fff;
+	font-size: 0.9em;
+}
+
+.crear_cuenta p a {
+	color: #fff;
+	text-decoration: none;
+	transition: 0.3s;
+	font-size: 0.9em;
+	margin-left: 3px;
+}
+
+.crear_cuenta p a:hover {
+	text-decoration: underline;
+}
+@media (max-width: 375px) {
+}
