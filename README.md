@@ -8,6 +8,10 @@ virtualenv -p python env
 
 .\env\Scripts\activate
 
+### Correr interfaz
+
+python .\src\app.py
+
 ## Package Version
 
 ---
