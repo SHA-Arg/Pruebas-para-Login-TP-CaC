@@ -3,7 +3,6 @@ from .entities.User import User
 
 class ModelUser():
 
-    @classmethod
     def login(self, db, user):
         try:
             cursor = db.connection.cursor()
