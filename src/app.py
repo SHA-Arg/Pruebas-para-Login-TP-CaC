@@ -6,7 +6,9 @@ from config import config
 from models.ModelUser import ModelUser
 
 # Entities:
-from models.entities.User import User
+from entities.User import User
+
+import logging
 
 
 app = Flask(__name__)
