@@ -22,4 +22,4 @@ db_client = MongoClient().local
 
 # Despliegue API en la nube:
 # Deta - https://www.deta.sh/
-# Intrucciones - https://fastapi.tiangolo.com/deployment/deta/
+# Intrucciones - https://fastapi.tiangolo.com/deployment/deta/b
