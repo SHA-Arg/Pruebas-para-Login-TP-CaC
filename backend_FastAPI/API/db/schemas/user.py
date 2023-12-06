@@ -1,10 +1,12 @@
-### User schema ###
+### schema de claseUsuario ###
 
-def user_schema(user) -> dict:
-    return {"id": str(user["_id"]),
-            "username": user["username"],
-            "email": user["email"]}
+def usuario_schema(usuario) -> dict:
+    return {"id": str(usuario["_id"]),
+            "nombre": usuario["username"],
+            "apellido": usuario["surname"],
+            "email": usuario["email"],
+            "password": usuario["password"], }
 
 
-def users_schema(users) -> list:
-    return [user_schema(user) for user in users]
+def usuarios_schema(usuarios) -> list:
+    return [usuario_schema(usuario) for usuario in usuarios]
