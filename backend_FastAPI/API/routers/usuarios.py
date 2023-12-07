@@ -11,7 +11,7 @@ router = APIRouter()
 
 @router.get("/usuarios")
 async def usuarios():
-    return usuarios_list
+    return
 
 
 @router.get("/usuario/{id}")  # Path

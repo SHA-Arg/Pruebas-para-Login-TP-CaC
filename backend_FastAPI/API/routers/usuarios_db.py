@@ -1,10 +1,9 @@
 ### Users DB API ###
 
 from fastapi import APIRouter, HTTPException, status
-from db.models.user import Usuario
-from db.schemas.user import usuario_schema, usuarios_schema
-from db.client import db_client
-from bson import ObjectId
+from db.models.usuario import *
+from db.schemas.usuario import *
+from db.client import *
 
 router = APIRouter(prefix="/userdb",
                    tags=["userdb"],
@@ -66,6 +65,7 @@ async def usuario(id: str):
         return {"error": "No se ha eliminado el usuario"}
 
 # Helper
+
 
 def search_usuario(field: str, key):
 
